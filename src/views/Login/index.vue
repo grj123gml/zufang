@@ -56,7 +56,7 @@ export default {
     async login () {
       try {
         const res = await userLogin(this.user)
-        this.$store.commit('setUser', res.data.body)
+        this.$store.commit('setUser', res.data.body.token)
         this.$toast.success('登录成功')
         this.$router.push('/profile')// 成功后跳转到我的页面
         console.log(res)

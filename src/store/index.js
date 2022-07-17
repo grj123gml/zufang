@@ -1,23 +1,19 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import { setItem, getItem } from '@/utils/storage'
+import { getToken, setToken } from '@/utils/auth'
+
 Vue.use(Vuex)
-const USER_TOKEK = 'USER_TOKEK'
+
 export default new Vuex.Store({
   state: {
-    user: getItem(USER_TOKEK) || {}
-  },
-  getters: {
+    // 声明token
+    user: getToken()
   },
   mutations: {
     setUser (state, payload) {
+      // 修改token
       state.user = payload
-      // 把数据同步到本地存储
-      setItem(USER_TOKEK, payload)
+      setToken(payload)
     }
-  },
-  actions: {
-  },
-  modules: {
   }
 })

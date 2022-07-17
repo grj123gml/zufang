@@ -16,22 +16,34 @@ const routes = [
     children: [
       // 如何设置默认子路由
       {
-        path: '/home',
+        path: 'home',
         component: () => import('@/views/Home')
       },
       {
-        path: '/list',
+        path: 'list',
         component: () => import('@/views/List')
       },
       {
-        path: '/news',
+        path: 'news',
         component: () => import('@/views/News')
       },
       {
-        path: '/profile',
+        path: 'profile',
         component: () => import('@/views/Profile')
       }
     ]
+  },
+  {
+    path: '/favorate',
+    component: () => import('@/views/Favorate')
+  },
+  {
+    path: '/rent',
+    component: () => import('@/views/Rent')
+  },
+  {
+    path: '/detail/:id',
+    component: () => import('@/views/Detail')
   }
 ]
 

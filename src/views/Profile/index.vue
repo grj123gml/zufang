@@ -10,7 +10,8 @@
           <img class="My_bg__2j-VX" src="http://liufusong.top:8080/img/avatar.png" alt="背景图">
         </div>
         <!-- 网名 -->
-        <div class="My_name__3U2NB">{{yhsj.nickname}}</div>
+        <!-- <div class="My_name__3U2NB">{{yhsj.nickname}}</div> -->
+          <div class="My_name__3U2NB">游客</div>
         <van-button round type="primary" size="mini" @click="layout">退出</van-button>
         <div class="My_edit__3wqlv">编辑个人资料
           <van-icon name="play"/>
@@ -24,13 +25,13 @@
         <van-col span="8">
           <div>
             <van-icon name="like-o" />
-            <p>我的收藏</p>
+            <p @click="favorateFn">我的收藏</p>
           </div>
           </van-col>
         <van-col span="8">
           <div>
           <van-icon name="wap-home-o" />
-            <p>我的出租</p>
+            <p @click="rentFn">我的出租</p>
           </div>
         </van-col>
         <van-col span="8">
@@ -92,6 +93,12 @@ export default {
       await this.$dialog.confirm({ message: '确认要退出吗' })
       this.$store.commit('setUser', {})
       this.$router.push('/login')
+    },
+    favorateFn () {
+      this.$router.push('/favorate')
+    },
+    rentFn () {
+      this.$router.push('/rent')
     }
   },
   computed: {
