@@ -2,6 +2,7 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
+import '@/assets/iconfont/iconfont.css'
 // 引入flexible 动态设置 REM 基准值
 import 'amfe-flexible/index.min.js'
 

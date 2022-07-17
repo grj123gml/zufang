@@ -7,6 +7,21 @@
     </van-swipe-item>
     </van-swipe>
     </div>
+     <div class="header">
+      <div class="search">
+        <div class="search-box">
+          <span class="">杭州</span>
+          <i class="iconfont icon-xiajiantou"></i>
+        </div>
+        <div class="form">
+          <i class="iconfont icon-sousuo"></i>
+          <van-form>
+            <van-field placeholder="请输入小区或地址" />
+          </van-form>
+        </div>
+      </div>
+      <i class="iconfont icon-didiandingwei_o tp"></i>
+    </div>
     <div>
     <van-grid class="grid" :border="false">
        <van-grid-item  text="整租">
@@ -93,6 +108,51 @@ export default {
       border-radius: 50%;
     }
   }
+  .header {
+  position: absolute;
+  top: 30px;
+  left: 40px;
+  display: flex;
+  align-items: center;
+  height: 100px;
+  padding: 0 20px;
+  .van-icon {
+    color: #fff;
+  }
+  .search {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    width: 530px;
+    height: 68px;
+    margin-left: 20px;
+    margin-right: 30px;
+    border-radius: 10px;
+    .search-box {
+      display: flex;
+      font-size: 28px;
+      margin-left: 20px;
+      border-right: 2px solid #666;
+      padding-right: 20px;
+    }
+    .form {
+      display: flex;
+      align-items: center;
+      margin-left: 10px;
+      .van-form {
+        display: flex;
+        width: 260px;
+        .van-cell {
+          padding: 0;
+        }
+      }
+    }
+  }
+  .tp {
+    font-size: 60px;
+    color: #fff;
+  }
+}
   .grid{
     .van-grid-item__text{
       font-size: 28px;
