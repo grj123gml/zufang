@@ -10,7 +10,7 @@
      <div class="header">
       <div class="search">
         <div class="search-box">
-          <span class="">杭州</span>
+          <span>杭州</span>
           <i class="iconfont icon-xiajiantou"></i>
         </div>
         <div class="form">
@@ -46,8 +46,10 @@
     <van-row type="flex" justify="space-around">
     <van-col class="col" span="12" v-for="item in bigImg" :key="item.id">
       <img :src="'http://liufusong.top:8080'+item.imgSrc" alt="" srcset="">
+      <div class="desc">
       <p>{{item.title}}</p>
       <p>{{item.desc}}</p>
+      </div>
     </van-col>
     </van-row>
       </div>
@@ -119,6 +121,17 @@ export default {
   .van-icon {
     color: #fff;
   }
+  .icon-xiajiantou{
+    margin-left: 6px;
+    font-size: 24px;
+    color:#7f7f80;
+  }
+  .iconfont icon-sousuo{
+   vertical-align: middle;
+   padding: 0 4px 0 24px;
+   color:#9c9fa1;
+   font-size: 30px;
+  }
   .search {
     display: flex;
     align-items: center;
@@ -186,9 +199,11 @@ export default {
     display: flex;
     background-color: #f6f5f6;
     .col{
+      display: flex;
       background-color: #fff;
     }
-    p{
+    .desc{
+      align-items: center;
       font-size: 28px;
     }
     img{
