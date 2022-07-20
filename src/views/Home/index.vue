@@ -9,7 +9,7 @@
     </div>
      <div class="header">
       <div class="search">
-        <div class="search-box">
+        <div class="search-box"  @click="$router.push('/city')">
           <span>杭州</span>
           <i class="iconfont icon-xiajiantou"></i>
         </div>
@@ -33,7 +33,7 @@
        <van-grid-item  text="地图找房">
        <template #icon><img src="../../assets/wz.png" alt=""></template>
        </van-grid-item>
-       <van-grid-item  text="去出租">
+       <van-grid-item  text="去出租"  @click="$router.push('/torent')">
        <template #icon><img src="../../assets/fz.png" alt=""></template>
        </van-grid-item>
        </van-grid>

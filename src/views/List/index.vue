@@ -1,38 +1,84 @@
 <template>
-  <div>
+<div>
     <div class="header">
-      <van-nav-bar
-      left-arrow
-      @click-left="$router.back()"
-    />
+     <van-icon name="arrow-left" size="25px"/>
+     <div class="search">
+        <div class="search-box">
+          <span class="">杭州</span>
+          <i class="iconfont icon-xiajiantou"></i>
+        </div>
+        <div class="form">
+              <i class="iconfont icon-sousuo"></i>
+              <van-form>
+                <van-field placeholder="请输入小区或地址" />
+              </van-form>
+        </div>
+     </div>
+    <i class="iconfont icon-didiandingwei_o tp"></i>
     </div>
-    <div>
-      <van-tabs v-model="active">
-      <van-tab title="区域">内容 1</van-tab>
-      <van-tab title="方式">内容 2</van-tab>
-      <van-tab title="租金">内容 3</van-tab>
-      <van-tab title="筛选">内容 4</van-tab>
-      </van-tabs>
+    <div class="root">
+
     </div>
-  </div>
+</div>
 </template>
 
 <script>
 export default {
+  created () {},
   data () {
-    return {
-      value: ''
-    }
+    return {}
   }
 }
 </script>
 
 <style scoped lang='less'>
-.van-nav-bar {
+.header{
+  display: flex;
+  align-items: center;
+  height: 100px;
+  padding: 0 20px;
   background-color: #21b97a;
+  .van-icon{
+    color: #fff
+  }
+  .search{
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    width: 530px;
+    height: 68px;
+    margin-left: 20px;
+    margin-right: 30px;
+    border-radius: 10px;
+    .search-box{
+      display: flex;
+      font-size: 28px;
+      margin-left: 20px;
+      border-right: 2px solid #666;
+      padding-right: 20px;
+    }
+    .form{
+      display: flex;
+      align-items: center;
+      margin-left: 10px;
+      .van-form{
+        display: flex;
+        width: 260px;
+        .van-cell{
+          padding: 0;
+        }
+      }
+    }
+  }
+  .tp{
+    font-size: 60px;
+    color: #fff
+  }
 }
-:deep(.van-icon) {
-  color: #fff;
+.root{
+    // background-color: #000;
+    height: 80px;
+    width: 100%;
+    border-bottom: 2px solid #666;
 }
-
 </style>

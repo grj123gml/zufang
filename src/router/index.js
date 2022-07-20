@@ -48,6 +48,10 @@ const routes = [
   {
     path: '/city',
     component: () => import('@/views/City')
+  },
+  {
+    path: '/torent',
+    component: () => import('@/views/Torent')
   }
 ]
 

@@ -6,3 +6,9 @@ export const getFw = (id) => {
     url: '/houses/' + id + ''
   })
 }
+// 发布房源
+export const deployHouse = () => {
+  return request({
+    url: '/houses/params'
+  })
+}

@@ -50,24 +50,25 @@
       </div>
       <div class="dtu">
         <div class="dtu-title">小区：<span>天山星城</span></div>
-        <div class="dtu-tu"></div>
+        <div class="dtu-tu">
+           <baidu-map class="bm-view" center="北京">
+           </baidu-map>
+        </div>
       </div>
+      <!-- 房屋配套 -->
       <div class="hous">
         <h3 class="hous-title">房屋配套</h3>
-        <ul class="hous-list">
-          <li class="hous-li">
-            <p>
-              <van-icon name="desktop-o" />
-            </p>
-            洗衣机
-          </li>
-          <li class="hous-li">
-            <p>
-              <van-icon name="cashier-o" />
-            </p>
-            电视
-          </li>
-        </ul>
+
+        <van-grid :column-num="5">
+        <van-grid-item v-for="item in housesj.supporting" :key="item"
+        :text="item">
+        <template #icon>
+         <span :class="`iconfont icon-${{'电视':'dianshiji','洗衣机':'xiyiji',
+         '宽带':'kuandai','热水器':'reshuiqi','床':'shafa','衣柜':'yigui',
+         '冰箱':'bingxiang','暖气':'nuanqi-','天然气':'tianranqi','空调':'kongtiao'}[item]}`"></span>
+        </template>
+        </van-grid-item>
+        </van-grid>
       </div>
       <div class="hous-set">
         <h3 class="hous-title">房源概况</h3>
@@ -179,6 +180,7 @@ export default {
     async getFw () {
       try {
         const res = await getFw(this.$route.params.id)
+        // console.log(this.$route.params.id)
         this.housesj = res.data.body
         console.log(this.housesj)
         console.log(res)
@@ -276,7 +278,7 @@ export default {
       .dtu-tu {
         width: 720px;
         height: 290px;
-        background-color: red;
+        // background-color: red;
       }
     }
     .hous-title {
@@ -432,5 +434,9 @@ export default {
       }
     }
   }
+  .bm-view {
+  width: 100%;
+  height: 300px;
+}
 }
 </style>
